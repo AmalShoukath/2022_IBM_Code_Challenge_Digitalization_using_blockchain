@@ -1,7 +1,7 @@
 import pymysql
 
 def iud(qry,val):
-    con=pymysql.connect(host="localhost",user="root",password="",port=3306,db="ila")
+    con=pymysql.connect(host="localhost",user="root",password="",port=3306,db="blockchain_login")
     cmd=con.cursor()
     cmd.execute(qry,val)
     id=cmd.lastrowid
@@ -11,7 +11,7 @@ def iud(qry,val):
 
 
 def selectall(qry):
-    con=pymysql.connect(host="localhost",user="root",password="",port=3306,db="ila")
+    con=pymysql.connect(host="localhost",user="root",password="",port=3306,db="blockchain_login")
     cmd=con.cursor()
     cmd.execute(qry)
     res=cmd.fetchall()
@@ -20,7 +20,7 @@ def selectall(qry):
     return res
 
 def selectall2(qry,val):
-    con=pymysql.connect(host="localhost",user="root",password="",port=3306,db="ila")
+    con=pymysql.connect(host="localhost",user="root",password="",port=3306,db="blockchain_login")
     cmd=con.cursor()
     cmd.execute(qry,val)
     res=cmd.fetchall()
@@ -30,7 +30,7 @@ def selectall2(qry,val):
 
 
 def selectone(qry,val):
-    con=pymysql.connect(host="localhost",user="root",password="",port=3306,db="ila")
+    con=pymysql.connect(host="localhost",user="root",password="",port=3306,db="blockchain_login")
     cmd=con.cursor()
     cmd.execute(qry,val)
     res=cmd.fetchone()
@@ -41,7 +41,7 @@ def selectone(qry,val):
 
 
 def androidselectall(q,val):
-    con=pymysql.connect(host='localhost',port=3306,user='root',passwd='',db='ila')
+    con=pymysql.connect(host='localhost',port=3306,user='root',passwd='',db='blockchain_login')
     cmd=con.cursor()
     cmd.execute(q,val)
     s=cmd.fetchall()
@@ -53,7 +53,7 @@ def androidselectall(q,val):
     return json_data
 
 def androidselectallnew(q):
-    con=pymysql.connect(host='localhost',port=3306,user='root',passwd='',db='ila')
+    con=pymysql.connect(host='localhost',port=3306,user='root',passwd='',db='blockchain_login')
     cmd=con.cursor()
     cmd.execute(q)
     s=cmd.fetchall()
