@@ -19,10 +19,9 @@ def list_properties():
 @app.route('/chain',methods=['GET'])
 def get_chain():
    chain_data=[]
-   for block in blockchain.chain:
-       chain_data.append(block._dict_)
-   return json.dumps({"length":len(chain_data),
-                     "chain":chain_data})
+   for block in plot1.chain:
+       chain_data.append(str(block.data))
+   return chain_data
 
 
 if __name__ == '__main__':
