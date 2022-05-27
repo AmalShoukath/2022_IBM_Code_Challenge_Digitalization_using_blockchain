@@ -7,7 +7,7 @@ class merkelTreeHash(object):
     def findMerkelHash(self,fileHashes):
         blocks=[]
         if not fileHashes:
-            raise ValueError("Missing required file hashes for computing merk tree")
+            raise ValueError("Missing required file hashes for computing merkel tree")
         for m in sorted(fileHashes):
             blocks.append(m)
         listLen=len(blocks)
