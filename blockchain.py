@@ -30,6 +30,18 @@ class Blockchain:
         self.chain.append(newBlock)
     def __str__(self) -> str:
         return self.data
+    def isChainValid(self):
+        for i in range(1,len(self.chain)):
+            currentBlock= self.chain[i]
+            previousBlock=self.chain[i-1]
+        if(currentBlock.hash != currentBlock.calculateHash()):
+            return False
+        if(currentBlock.previousHash != previousBlock.hash):
+            return False
+        return True
+        
+
+
         
 plot1 = Blockchain()
 B1=Block(1,"23/05/2022",{"amount": 4})
@@ -38,5 +50,7 @@ B2=Block(1,"24/05/2022",{"amount": 10})
 plot1.addBlock(B2)
 for items in plot1.chain:
     print(str(items.data))
-
-
+print(plot1.isChainValid())
+plot1.chain[1].data["amount"]=100
+print(plot1.chain[1].data)
+print(plot1.isChainValid())
